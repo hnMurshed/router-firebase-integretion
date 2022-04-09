@@ -1,0 +1,18 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.navbar span {
+    font-size: 24px;
+    font-weight: bold;
+}
+.navbar nav a {
+    text-decoration: none;
+    margin-left: 20px;
+    color: black;
+    transition: 0.3s;
+}
+.navbar nav a:hover {
+    color:coral;
+}
