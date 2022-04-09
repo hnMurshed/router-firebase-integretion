@@ -1,18 +1,54 @@
+.header {
+    background-color: dodgerblue;
+    color: white;
+}
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 20px 0;
 }
 .navbar span {
     font-size: 24px;
     font-weight: bold;
 }
+.nav-container {
+    display: flex;
+    align-items: center;
+}
 .navbar nav a {
     text-decoration: none;
     margin-left: 20px;
-    color: black;
+    color: white;
     transition: 0.3s;
 }
 .navbar nav a:hover {
-    color:coral;
+    border-bottom: 2px solid white;
+}
+.register {
+    background-color: deeppink;
+    color: white;
+    text-decoration: none;
+    padding: 8px 20px;
+    margin-right: 5px;
+    border-radius: 6px;
+    border: 2px solid deeppink;
+    transition: 0.3s;
+}
+.register:hover {
+    background-color: transparent;
+    color: white;
+}
+.login {
+    background-color:white;
+    color: black;
+    text-decoration: none;
+    padding: 8px 20px;
+    border-radius: 6px;
+    border: 2px solid white;
+    transition: 0.3s;
+}
+.login:hover {
+    background-color: transparent;
+    color: white;
 }
