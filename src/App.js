@@ -7,16 +7,31 @@ import Orders from './components/Orders/Orders';
 import Reviews from './components/Reviews/Reviews';
 import Login from './components/Login/Login';
 import Register from './components/Register/Register';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { getAuth } from 'firebase/auth';
+import app from './firebase.init';
+import RequiredAuth from './components/RequiredAuth/RequiredAuth';
+
+const auth = getAuth(app);
 
 function App() {
+  const [user] = useAuthState(auth);
   return (
     <div>
       <Header></Header>
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='home' element={<Home></Home>}></Route>
-        <Route path='products' element={<Products></Products>}></Route>
-        <Route path='orders' element={<Orders></Orders>}></Route>
+        <Route path='products' element={
+          <RequiredAuth>
+            <Products></Products>
+          </RequiredAuth>
+        }></Route>
+        <Route path='orders' element={
+          <RequiredAuth>
+            <Orders></Orders>
+          </RequiredAuth>
+      }></Route>
         <Route path='reviews' element={<Reviews></Reviews>}></Route>
         <Route path='register' element={<Register></Register>}></Route>
         <Route path='login' element={<Login></Login>}></Route>
